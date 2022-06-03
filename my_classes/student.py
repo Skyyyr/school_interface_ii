@@ -5,7 +5,10 @@ from person import Person
 class Student(Person):
 
     def __init__(self, name, age, password, role, school_id):
-        super().__init__(name, age, password, role)
+        Person.__init__(self, name, age, password, role)
+        self.age = age
+        self.password = password
+        self.role = role
         self.school_id = school_id
 
     @classmethod
