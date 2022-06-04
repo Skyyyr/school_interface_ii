@@ -2,6 +2,7 @@ import csv
 import os.path
 from person import Person
 
+
 class Student(Person):
 
     def __init__(self, name, age, password, role, school_id):
@@ -10,6 +11,9 @@ class Student(Person):
         self.password = password
         self.role = role
         self.school_id = school_id
+
+    def __str__(self):
+        return f"{self.name.upper()}\n------\nAge: {self.age}\nID: {self.school_id}"
 
     @classmethod
     def objects(cls):
@@ -21,4 +25,3 @@ class Student(Person):
             for row in reader:
                 students.append(Student(**dict(row)))
         return students
-
